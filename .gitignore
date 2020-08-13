@@ -1,0 +1,10 @@
+# XCodeProject
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj*
+!*.xcodeproj/xcshareddata*
+
+# Carthage
+Carthage
+
+# Other
+.DS_Store

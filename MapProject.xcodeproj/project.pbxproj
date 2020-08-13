@@ -12,7 +12,26 @@
 		3AB6519624E5925F00FF8C11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6519524E5925F00FF8C11 /* ViewController.swift */; };
 		3AB6519B24E5926200FF8C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB6519A24E5926200FF8C11 /* Assets.xcassets */; };
 		3AB6519E24E5926200FF8C11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB6519C24E5926200FF8C11 /* LaunchScreen.storyboard */; };
+		3AB651AC24E5A08E00FF8C11 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB651AA24E5A08E00FF8C11 /* Mapbox.framework */; };
+		3AB651AD24E5A08E00FF8C11 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB651AA24E5A08E00FF8C11 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3AB651AE24E5A08E00FF8C11 /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB651AB24E5A08E00FF8C11 /* MapboxMobileEvents.framework */; };
+		3AB651AF24E5A08E00FF8C11 /* MapboxMobileEvents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB651AB24E5A08E00FF8C11 /* MapboxMobileEvents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3AB651B024E5A08E00FF8C11 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3AB651AF24E5A08E00FF8C11 /* MapboxMobileEvents.framework in Embed Frameworks */,
+				3AB651AD24E5A08E00FF8C11 /* Mapbox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3AB6518E24E5925F00FF8C11 /* MapProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +41,8 @@
 		3AB6519A24E5926200FF8C11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AB6519D24E5926200FF8C11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AB6519F24E5926200FF8C11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AB651AA24E5A08E00FF8C11 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
+		3AB651AB24E5A08E00FF8C11 /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxMobileEvents.framework; path = Carthage/Build/iOS/MapboxMobileEvents.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB651AE24E5A08E00FF8C11 /* MapboxMobileEvents.framework in Frameworks */,
+				3AB651AC24E5A08E00FF8C11 /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +63,7 @@
 			children = (
 				3AB6519024E5925F00FF8C11 /* MapProject */,
 				3AB6518F24E5925F00FF8C11 /* Products */,
+				3AB651A924E5A08E00FF8C11 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +120,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		3AB651A924E5A08E00FF8C11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AB651AA24E5A08E00FF8C11 /* Mapbox.framework */,
+				3AB651AB24E5A08E00FF8C11 /* MapboxMobileEvents.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +139,7 @@
 				3AB6518A24E5925F00FF8C11 /* Sources */,
 				3AB6518B24E5925F00FF8C11 /* Frameworks */,
 				3AB6518C24E5925F00FF8C11 /* Resources */,
+				3AB651B024E5A08E00FF8C11 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,7 +340,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J3B68N99HN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "MapProject/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,7 +363,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J3B68N99HN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "MapProject/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
