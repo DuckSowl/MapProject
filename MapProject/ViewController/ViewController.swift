@@ -6,8 +6,8 @@
 //  Copyright © 2020 VTB. All rights reserved.
 //
 
-import UIKit
 import Mapbox
+import Pin
 
 class ViewController: UIViewController {
 
@@ -18,7 +18,7 @@ class ViewController: UIViewController {
                                                     longitude: 37.6)
         let mapView = MGLMapView(frame: view.bounds)
         mapView.setCenter(moscowLocation, zoomLevel: 9, animated: false)
-        view.addSubview(mapView)
+        mapView.pin(super: view).all().activate
     }
 
 

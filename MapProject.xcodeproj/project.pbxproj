@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A83CF5824E97F8000D4F86D /* Pin in Frameworks */ = {isa = PBXBuildFile; productRef = 3A83CF5724E97F8000D4F86D /* Pin */; };
 		3AB6519224E5925F00FF8C11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6519124E5925F00FF8C11 /* AppDelegate.swift */; };
 		3AB6519424E5925F00FF8C11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6519324E5925F00FF8C11 /* SceneDelegate.swift */; };
 		3AB6519624E5925F00FF8C11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6519524E5925F00FF8C11 /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A83CF5824E97F8000D4F86D /* Pin in Frameworks */,
 				3AB651AE24E5A08E00FF8C11 /* MapboxMobileEvents.framework in Frameworks */,
 				3AB651AC24E5A08E00FF8C11 /* Mapbox.framework in Frameworks */,
 			);
@@ -146,6 +148,9 @@
 			dependencies = (
 			);
 			name = MapProject;
+			packageProductDependencies = (
+				3A83CF5724E97F8000D4F86D /* Pin */,
+			);
 			productName = MapProject;
 			productReference = 3AB6518E24E5925F00FF8C11 /* MapProject.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +179,9 @@
 				Base,
 			);
 			mainGroup = 3AB6518524E5925F00FF8C11;
+			packageReferences = (
+				3A83CF5624E97F8000D4F86D /* XCRemoteSwiftPackageReference "LittlePin" */,
+			);
 			productRefGroup = 3AB6518F24E5925F00FF8C11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -402,6 +410,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A83CF5624E97F8000D4F86D /* XCRemoteSwiftPackageReference "LittlePin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DuckSowl/LittlePin.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A83CF5724E97F8000D4F86D /* Pin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A83CF5624E97F8000D4F86D /* XCRemoteSwiftPackageReference "LittlePin" */;
+			productName = Pin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3AB6518624E5925F00FF8C11 /* Project object */;
 }
