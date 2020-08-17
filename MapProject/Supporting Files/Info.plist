@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Turn on location services to generate directions to random locations around you.</string>
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoiZHVja3Nvd2wiLCJhIjoiY2tkc3R1MnRoMTZhYTJ4bXMxZjB2MmpieCJ9.zBcE1K4CzKgCzVrRlDgLKQ</string>
 	<key>CFBundleDevelopmentRegion</key>
