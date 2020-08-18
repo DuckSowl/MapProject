@@ -26,6 +26,8 @@ final class MapViewController: UIViewController {
     
     let mapView = MGLMapView()
     
+    var points = [CLLocationCoordinate2D]()
+    
     let userTrackingModeButton: UserTrackingModeButton = {
         let button = UserTrackingModeButton()
         button.addTarget(self, action: #selector(toggleUserTrackingMode),
@@ -41,6 +43,7 @@ final class MapViewController: UIViewController {
         configureMapView()
         configureUserLocationTracking()
         configureUserTrackingModeButtonConstraints()
+        singleTap()
     }
     
     // MARK: - View Configuration
@@ -50,7 +53,6 @@ final class MapViewController: UIViewController {
         mapView.compassViewMargins =
             .init(x: Constants.layoutMargin,
                   y: Constants.trackingButtonSide + Constants.layoutMargin)
-        
         mapView.delegate = self
     }
     
@@ -71,6 +73,28 @@ final class MapViewController: UIViewController {
             .size(Constants.trackingButtonSide)
             .topSafe().right(Constants.layoutMargin)
             .activate
+    }
+    
+    // MARK: -  Setup single tap gesture
+    
+    private func singleTap() {
+        
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(sender:)))
+        for recognizer in mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
+            singleTap.require(toFail: recognizer)
+        }
+        mapView.addGestureRecognizer(singleTap)
+    }
+    
+    // MARK: - Handle single taps
+    
+    @objc private func handleMapTap(sender: UITapGestureRecognizer) {
+        let point = sender.location(in: sender.view!)
+        let coordinate = mapView.convert(point, toCoordinateFrom: mapView)
+        points.append(coordinate)
+        let annotation = MGLPointAnnotation()        
+        annotation.coordinate = coordinate
+        mapView.addAnnotation(annotation)
     }
     
     // MARK: - Private Methods
