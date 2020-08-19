@@ -25,7 +25,7 @@ final class MapViewController: UIViewController {
     // MARK: - Properties
     
     let mapView = MGLMapView()
-    
+
     let userTrackingModeButton: UserTrackingModeButton = {
         let button = UserTrackingModeButton()
         button.addTarget(self, action: #selector(toggleUserTrackingMode),
@@ -50,7 +50,6 @@ final class MapViewController: UIViewController {
         mapView.compassViewMargins =
             .init(x: Constants.layoutMargin,
                   y: Constants.trackingButtonSide + Constants.layoutMargin)
-        
         mapView.delegate = self
     }
     
@@ -79,6 +78,23 @@ final class MapViewController: UIViewController {
         let locationAvailable = mapView.locationManager.locationAvailable
         let userTrackingMode = mapView.userTrackingMode
         userTrackingModeButton.update(with: locationAvailable ? userTrackingMode : nil)
+    }
+    
+    private func getAnnotation(coordinate: CLLocationCoordinate2D, image: UIImage) -> MGLPointAnnotation {
+        
+        let annotation = MGLPointAnnotation()
+        annotation.coordinate = coordinate
+        
+        let shapeSource = MGLShapeSource(identifier: "marker-source", shape: annotation, options: nil)
+        let shapeLayer = MGLSymbolStyleLayer(identifier: "marker-style", source: shapeSource)
+        
+        mapView.style?.setImage(image, forName: "home-symbol")
+        shapeLayer.iconImageName = NSExpression(forConstantValue: "home-symbol")
+        
+        mapView.style?.addSource(shapeSource)
+        mapView.style?.addLayer(shapeLayer)
+        
+        return annotation
     }
     
     // MARK: - Actions
