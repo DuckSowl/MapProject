@@ -25,10 +25,7 @@ final class MapViewController: UIViewController {
     // MARK: - Properties
     
     let mapView = MGLMapView()
-    
-    //var points = [CLLocationCoordinate2D]()
-    let annotation = MGLPointAnnotation()
-    
+
     let userTrackingModeButton: UserTrackingModeButton = {
         let button = UserTrackingModeButton()
         button.addTarget(self, action: #selector(toggleUserTrackingMode),
@@ -44,7 +41,6 @@ final class MapViewController: UIViewController {
         configureMapView()
         configureUserLocationTracking()
         configureUserTrackingModeButtonConstraints()
-        singleTap()
     }
     
     // MARK: - View Configuration
