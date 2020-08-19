@@ -26,7 +26,8 @@ final class MapViewController: UIViewController {
     
     let mapView = MGLMapView()
     
-    var points = [CLLocationCoordinate2D]()
+    //var points = [CLLocationCoordinate2D]()
+    let annotation = MGLPointAnnotation()
     
     let userTrackingModeButton: UserTrackingModeButton = {
         let button = UserTrackingModeButton()
@@ -75,34 +76,29 @@ final class MapViewController: UIViewController {
             .activate
     }
     
-    // MARK: -  Setup single tap gesture
-    
-    private func singleTap() {
-        
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(sender:)))
-        for recognizer in mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
-            singleTap.require(toFail: recognizer)
-        }
-        mapView.addGestureRecognizer(singleTap)
-    }
-    
-    // MARK: - Handle single taps
-    
-    @objc private func handleMapTap(sender: UITapGestureRecognizer) {
-        let point = sender.location(in: sender.view!)
-        let coordinate = mapView.convert(point, toCoordinateFrom: mapView)
-        points.append(coordinate)
-        let annotation = MGLPointAnnotation()        
-        annotation.coordinate = coordinate
-        mapView.addAnnotation(annotation)
-    }
-    
     // MARK: - Private Methods
     
     private func updateUserTrackingMode() {
         let locationAvailable = mapView.locationManager.locationAvailable
         let userTrackingMode = mapView.userTrackingMode
         userTrackingModeButton.update(with: locationAvailable ? userTrackingMode : nil)
+    }
+    
+    private func getAnnotation(coordinate: CLLocationCoordinate2D, image: UIImage) -> MGLPointAnnotation {
+        
+        let annotation = MGLPointAnnotation()
+        annotation.coordinate = coordinate
+        
+        let shapeSource = MGLShapeSource(identifier: "marker-source", shape: annotation, options: nil)
+        let shapeLayer = MGLSymbolStyleLayer(identifier: "marker-style", source: shapeSource)
+        
+        mapView.style?.setImage(image, forName: "home-symbol")
+        shapeLayer.iconImageName = NSExpression(forConstantValue: "home-symbol")
+        
+        mapView.style?.addSource(shapeSource)
+        mapView.style?.addLayer(shapeLayer)
+        
+        return annotation
     }
     
     // MARK: - Actions
