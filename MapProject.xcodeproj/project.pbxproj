@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1C8ECE25062CE900AA3E65 /* MapboxDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1C8ECD25062CE900AA3E65 /* MapboxDirections.framework */; };
+		3A1C8ECF25062CE900AA3E65 /* MapboxDirections.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1C8ECD25062CE900AA3E65 /* MapboxDirections.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3A1C8ED1250630AC00AA3E65 /* Turf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1C8ED0250630AC00AA3E65 /* Turf.framework */; };
+		3A1C8ED2250630AC00AA3E65 /* Turf.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1C8ED0250630AC00AA3E65 /* Turf.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3A1C8ED4250630C700AA3E65 /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1C8ED3250630C700AA3E65 /* Polyline.framework */; };
+		3A1C8ED5250630C700AA3E65 /* Polyline.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1C8ED3250630C700AA3E65 /* Polyline.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A83CF4E24E932D600D4F86D /* MGLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83CF4D24E932D600D4F86D /* MGLLocationManager.swift */; };
 		3A83CF5224E96C0100D4F86D /* UserTrackingModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83CF5124E96C0100D4F86D /* UserTrackingModeButton.swift */; };
 		3A83CF5824E97F8000D4F86D /* Pin in Frameworks */ = {isa = PBXBuildFile; productRef = 3A83CF5724E97F8000D4F86D /* Pin */; };
@@ -19,6 +25,9 @@
 		3AB651AD24E5A08E00FF8C11 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB651AA24E5A08E00FF8C11 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3AB651AE24E5A08E00FF8C11 /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB651AB24E5A08E00FF8C11 /* MapboxMobileEvents.framework */; };
 		3AB651AF24E5A08E00FF8C11 /* MapboxMobileEvents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB651AB24E5A08E00FF8C11 /* MapboxMobileEvents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3ABB733925066A3F002506A5 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB733625066A3E002506A5 /* UIColor+.swift */; };
+		3ABB733A25066A3F002506A5 /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB733725066A3F002506A5 /* Double+.swift */; };
+		3ABB733B25066A3F002506A5 /* CLLocationCoordinate2D+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB733825066A3F002506A5 /* CLLocationCoordinate2D+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,8 +37,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3A1C8ECF25062CE900AA3E65 /* MapboxDirections.framework in Embed Frameworks */,
+				3A1C8ED5250630C700AA3E65 /* Polyline.framework in Embed Frameworks */,
 				3AB651AF24E5A08E00FF8C11 /* MapboxMobileEvents.framework in Embed Frameworks */,
 				3AB651AD24E5A08E00FF8C11 /* Mapbox.framework in Embed Frameworks */,
+				3A1C8ED2250630AC00AA3E65 /* Turf.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,6 +49,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A1C8ECD25062CE900AA3E65 /* MapboxDirections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxDirections.framework; path = Carthage/Build/iOS/MapboxDirections.framework; sourceTree = "<group>"; };
+		3A1C8ED0250630AC00AA3E65 /* Turf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Turf.framework; path = Carthage/Build/iOS/Turf.framework; sourceTree = "<group>"; };
+		3A1C8ED3250630C700AA3E65 /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/iOS/Polyline.framework; sourceTree = "<group>"; };
 		3A83CF4D24E932D600D4F86D /* MGLLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLLocationManager.swift; sourceTree = "<group>"; };
 		3A83CF5124E96C0100D4F86D /* UserTrackingModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTrackingModeButton.swift; sourceTree = "<group>"; };
 		3AB6518E24E5925F00FF8C11 /* MapProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +63,9 @@
 		3AB6519F24E5926200FF8C11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AB651AA24E5A08E00FF8C11 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
 		3AB651AB24E5A08E00FF8C11 /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxMobileEvents.framework; path = Carthage/Build/iOS/MapboxMobileEvents.framework; sourceTree = "<group>"; };
+		3ABB733625066A3E002506A5 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		3ABB733725066A3F002506A5 /* Double+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
+		3ABB733825066A3F002506A5 /* CLLocationCoordinate2D+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +73,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1C8ED4250630C700AA3E65 /* Polyline.framework in Frameworks */,
 				3A83CF5824E97F8000D4F86D /* Pin in Frameworks */,
+				3A1C8ECE25062CE900AA3E65 /* MapboxDirections.framework in Frameworks */,
 				3AB651AE24E5A08E00FF8C11 /* MapboxMobileEvents.framework in Frameworks */,
 				3AB651AC24E5A08E00FF8C11 /* Mapbox.framework in Frameworks */,
+				3A1C8ED1250630AC00AA3E65 /* Turf.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,7 +88,10 @@
 		3A83CF4C24E932BC00D4F86D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3ABB733825066A3F002506A5 /* CLLocationCoordinate2D+.swift */,
+				3ABB733725066A3F002506A5 /* Double+.swift */,
 				3A83CF4D24E932D600D4F86D /* MGLLocationManager.swift */,
+				3ABB733625066A3E002506A5 /* UIColor+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -139,6 +163,9 @@
 		3AB651A924E5A08E00FF8C11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A1C8ED3250630C700AA3E65 /* Polyline.framework */,
+				3A1C8ED0250630AC00AA3E65 /* Turf.framework */,
+				3A1C8ECD25062CE900AA3E65 /* MapboxDirections.framework */,
 				3AB651AA24E5A08E00FF8C11 /* Mapbox.framework */,
 				3AB651AB24E5A08E00FF8C11 /* MapboxMobileEvents.framework */,
 			);
@@ -223,10 +250,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AB6519624E5925F00FF8C11 /* MapViewController.swift in Sources */,
+				3ABB733B25066A3F002506A5 /* CLLocationCoordinate2D+.swift in Sources */,
+				3ABB733A25066A3F002506A5 /* Double+.swift in Sources */,
 				3AB6519224E5925F00FF8C11 /* AppDelegate.swift in Sources */,
 				3A83CF5224E96C0100D4F86D /* UserTrackingModeButton.swift in Sources */,
 				3AB6519424E5925F00FF8C11 /* SceneDelegate.swift in Sources */,
 				3A83CF4E24E932D600D4F86D /* MGLLocationManager.swift in Sources */,
+				3ABB733925066A3F002506A5 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
